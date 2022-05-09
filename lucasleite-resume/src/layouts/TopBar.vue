@@ -3,8 +3,9 @@ import '../css/global.css'
 import 'animate.css'
 import {Swiper, SwiperSlide} from 'swiper/vue';
 import { Autoplay,FreeMode } from "swiper";
+// import {ref, reactive} from 'vue';
 
-import 'swiper/css'
+import 'swiper/css';
 
 import "swiper/css/free-mode"
 import "swiper/css/pagination";
@@ -17,24 +18,40 @@ export default {
   },
   setup(){
     const modules = [Autoplay, FreeMode]
-    
+    // const teste = ref(0);
+    // const data = reactive({
+
+    // })
+   
     //Menu mobile
     const menuClick = () =>{
+      const slashone = document.getElementById('slashone');
+      const slashtwo = document.getElementById('slashtwo');
+
       const list = document.getElementById('list');
+
       const app = document.getElementById('application');
+
       if(list.classList == 'list-style-none'){
         list.classList.remove('list-style-none')
         list.classList.add('list-style-flex');
-
+          slashone.classList.add('first-line');
+          slashtwo.classList.add('second-line');
+        
         if(app.classList == 'theme-dark'){
           app.classList.remove('theme-dark');
           app.classList.add('theme-light');
+          
         }
         else{
           app.classList.remove('theme-light');
-          app.classList.add('theme-dark')
+          app.classList.add('theme-dark');
+
         }
       } else{
+        slashone.classList.remove('first-line');
+        slashtwo.classList.remove('second-line');
+
         list.classList.remove('list-style-flex')
         list.classList.add('list-style-none')
 
@@ -45,13 +62,16 @@ export default {
         else{
           app.classList.remove('theme-light');
           app.classList.add('theme-dark')
-        }
+        } 
+       
       }
     }
 
     return{
       menuClick,
-      modules
+      modules,
+      // teste,
+      // data
     }
   }
 }
@@ -60,7 +80,7 @@ export default {
 <template>
   <header>
     <div class="header-main container ">
-      <div class="header-container">
+      <div class="header-container ">
         <div class=" logo">
           <h1>LUCAS</h1><h1>LEITE</h1> 
         </div>
@@ -69,9 +89,13 @@ export default {
         </div>
         <nav>
           <div class="menu-toggle">
-            <a href="#" @click="menuClick">
-              <span class="vertical-line"></span>
-              <span class="vertical-line" style="margin-top:10px"></span>
+            <a href="#" @click="menuClick" >
+             
+              <!-- <span class="vertical-line"></span>
+              <span class="vertical-line" style="margin-top:10px"></span> -->
+              <i class="fas fa-slash" id="slashone"></i>
+              <i class="fas fa-slash" id="slashtwo"></i>
+              
             </a>
           </div>
           <ul class="list-style-none " id="list">
@@ -93,7 +117,7 @@ export default {
           disableOnInteraction:false
         }"
       >
-        <SwiperSlide class="slide-item animate__animated animate__backInUp">
+        <SwiperSlide class="slide-item animate__animated animate__fadeInDown">
           <div class="text-content" >
             <h1 style="font-size: 60px">Ola, me chamo <strong class="decoration-text">Lucas</strong></h1>
             <span>Desenvolvedor de Software e estudante do 3º Semetre de Analise e Desenvolvimento de Sistemas na Universidade Anhembi Morumbi.</span>
@@ -142,7 +166,10 @@ export default {
 </template>
 
 <style scoped>
-
+.animate__fadeInDown{
+ animation-duration: 1.5s;
+  
+}
 .header-container{
   padding-top: 95px;
   display: flex;
@@ -197,6 +224,7 @@ nav ul li:hover{
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+
 }
 .slide-item{
   display: flex;
@@ -416,15 +444,26 @@ h1 span, h1 strong, span{
   .menu-toggle a{
     display: flex;
     flex-direction: column;
+    text-decoration: none;
   }
-  .menu-toggle a:hover span{
-    transform: skewX(30deg)
-  
-  }
-  .vertical-line{
-    width: 40px;
-    border: 1px solid var(--primary-color);
+
+  .menu-toggle a i{
+    color: var(--primary-color);
+    font-size: 25px;
+    line-height: 15px;
+    transform: rotate(-38deg);
+    transition: all 0.3s;
     
+  }
+  .first-line{
+    transform: rotate(15deg)!important;
+     line-height: 1px!important;
+     transition: all 0.3s!important;
+  }
+  .second-line{
+    transform: rotate(-90deg)!important;
+    line-height: 1px!important;
+    transition: all 0.3s!important;
   }
   .slide-item{
     display: flex;
