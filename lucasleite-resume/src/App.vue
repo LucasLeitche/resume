@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="theme-dark">
+  <div id="application" class="theme-dark">
     <TopBar/>
     <FooterBar/>
     <div>

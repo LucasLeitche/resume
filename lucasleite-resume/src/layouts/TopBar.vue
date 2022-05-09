@@ -1,3 +1,62 @@
+<script>
+import '../css/global.css'
+import 'animate.css'
+import {Swiper, SwiperSlide} from 'swiper/vue';
+import { Autoplay,FreeMode } from "swiper";
+
+import 'swiper/css'
+
+import "swiper/css/free-mode"
+import "swiper/css/pagination";
+
+
+export default {
+  components:{
+    Swiper,
+    SwiperSlide
+  },
+  setup(){
+    const modules = [Autoplay, FreeMode]
+    
+    //Menu mobile
+    const menuClick = () =>{
+      const list = document.getElementById('list');
+      const app = document.getElementById('application');
+      if(list.classList == 'list-style-none'){
+        list.classList.remove('list-style-none')
+        list.classList.add('list-style-flex');
+
+        if(app.classList == 'theme-dark'){
+          app.classList.remove('theme-dark');
+          app.classList.add('theme-light');
+        }
+        else{
+          app.classList.remove('theme-light');
+          app.classList.add('theme-dark')
+        }
+      } else{
+        list.classList.remove('list-style-flex')
+        list.classList.add('list-style-none')
+
+        if(app.classList == 'theme-dark'){
+          app.classList.remove('theme-dark');
+          app.classList.add('theme-light');
+        }
+        else{
+          app.classList.remove('theme-light');
+          app.classList.add('theme-dark')
+        }
+      }
+    }
+
+    return{
+      menuClick,
+      modules
+    }
+  }
+}
+</script>
+
 <template>
   <header>
     <div class="header-main container ">
@@ -10,10 +69,12 @@
         </div>
         <nav>
           <div class="menu-toggle">
-            <span class="vertical-line"></span>
-            <span class="vertical-line" style="margin-top:10px"></span>
+            <a href="#" @click="menuClick">
+              <span class="vertical-line"></span>
+              <span class="vertical-line" style="margin-top:10px"></span>
+            </a>
           </div>
-          <ul class="list-style">
+          <ul class="list-style-none " id="list">
             <li>Home</li>
             <li>About</li>
             <li>Skills</li>
@@ -22,26 +83,26 @@
           </ul>
         </nav>
       </div>
-      <Swiper class="mySwiper"
+      <Swiper class="mySwiper "
         :modules="modules"
         :thumbs="{swiper: thumbsSwiper}"
         :pagination="pagination"
         :loop="false"
         :autoplay="{
-          delay:5000,
+          delay:3000,
           disableOnInteraction:false
         }"
       >
-        <SwiperSlide class="slide-item">
+        <SwiperSlide class="slide-item animate__animated animate__backInUp">
           <div class="text-content" >
-            <h1 style="font-size: 60px">Ola, sou o <strong class="decoration-text">Lucas</strong></h1>
+            <h1 style="font-size: 60px">Ola, me chamo <strong class="decoration-text">Lucas</strong></h1>
             <span>Desenvolvedor de Software e estudante do 3º Semetre de Analise e Desenvolvimento de Sistemas na Universidade Anhembi Morumbi.</span>
           </div>
           <div class="container-item-img ">
-            <img :src="require('@/assets/Picture.jpeg')" >
+            <img :src="require('@/assets/Picture.jpeg')"  >
           </div>
         </SwiperSlide>
-        <SwiperSlide class="slide-item">
+        <SwiperSlide class="slide-item animate__animated animate__bounce" id="silde-0">
           <div class="text-content-order-0" >
             <h1>Soluções modernas para o seu <strong class="decoration-text">Produto </strong>ou <strong class="decoration-text"> Serviço</strong></h1>
             
@@ -66,51 +127,19 @@
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide class="slide-item">
+        <!-- <SwiperSlide class="slide-item">
           <div class="text-content" >
            <h1>Soluções para o seu <strong class="decoration-text">Produto </strong>ou <strong class="decoration-text"> Serviço</strong></h1>
           </div>
           <div class="container-item-img">
             <img :src="require('@/assets/Picture.jpeg')" >
           </div>
-        </SwiperSlide>
+        </SwiperSlide> -->
       </Swiper>
 
     </div>
   </header>
 </template>
-
-<script>
-import '../css/global.css'
-import {Swiper, SwiperSlide} from 'swiper/vue';
-import { Autoplay,FreeMode } from "swiper";
-
-import 'swiper/css'
-
-import "swiper/css/free-mode"
-import "swiper/css/pagination";
-
-
-export default {
-  components:{
-    Swiper,
-    SwiperSlide
-  },
-  setup(){
-    const modules = [Autoplay, FreeMode]
-
-    return{
-      pagination:{
-        clickable: true,
-        renderBullet: function(className){
-          return '<span style="color:white" class="'+ className + '> Teste </span>'
-        } 
-      },
-      modules
-    }
-  }
-}
-</script>
 
 <style scoped>
 
@@ -118,7 +147,6 @@ export default {
   padding-top: 95px;
   display: flex;
   justify-content: space-between;
-  
 }
 
 .logo{
@@ -131,15 +159,12 @@ export default {
     align-items: center;
     justify-content: center;
     color: var(--primary-color);
-   
-   
 }
 
 .logo:hover{
   border: 1px solid var(--primary-color-hover);
   color: var(--primary-color-hover);
   cursor: pointer;
-
 }
 
 .logo-mobile{
@@ -180,7 +205,7 @@ nav ul li:hover{
 
 .slide-item .text-content{
   color: var(--primary-color);
-  text-align: justify;
+  text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -204,7 +229,9 @@ nav ul li:hover{
   padding-top: 0;
   order: 0;
 }
-
+ .swiper{
+    margin-top: 5%;
+  }
 .row{
   display: flex;
   align-items: center;
@@ -332,7 +359,7 @@ h1 span, h1 strong, span{
 @media only screen and (max-width: 760px){
   .swiper{
     height: 100vh;
-    margin-top: 10%;
+    margin-top: 30%;
   }
   .header-main{
   background: var(--bg-color);
@@ -355,8 +382,26 @@ h1 span, h1 strong, span{
     justify-content: center;
     margin-top: 0;
   }
-  .list-style{
+  .list-style-none{
     display: none;
+  }
+  .list-style-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-top: 45px;
+    z-index: 99;
+    width: 100vw;
+    position: absolute;
+    left: 0; 
+    height: 100vh;
+    background: var(--bg-color);
+    color: var(--primary-color);
+  }
+  .list-style-flex li{
+    margin: 30px 0;
+    
   }
   .menu-toggle{
   width:100%; 
@@ -367,6 +412,14 @@ h1 span, h1 strong, span{
   align-items: end;
   justify-content: center;
   cursor: pointer;
+  }
+  .menu-toggle a{
+    display: flex;
+    flex-direction: column;
+  }
+  .menu-toggle a:hover span{
+    transform: skewX(30deg)
+  
   }
   .vertical-line{
     width: 40px;

@@ -52,3 +52,10 @@ ul li{
 .container{
     padding: 0 8%;
 }
+
+.d-none{
+    display: none;
+}
+.d-block{
+    display: block;
+}
