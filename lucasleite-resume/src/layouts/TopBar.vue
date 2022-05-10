@@ -79,7 +79,7 @@ export default {
 
 <template>
   <header>
-    <div class="header-main container ">
+    <div class="header-main container">
       <div class="header-container ">
         <div class=" logo">
           <h1>LUCAS</h1><h1>LEITE</h1> 
@@ -113,7 +113,7 @@ export default {
         :pagination="pagination"
         :loop="false"
         :autoplay="{
-          delay:3000,
+          delay:6000,
           disableOnInteraction:false
         }"
       >
@@ -453,17 +453,14 @@ h1 span, h1 strong, span{
     line-height: 15px;
     transform: rotate(-38deg);
     transition: all 0.3s;
-    
   }
   .first-line{
     transform: rotate(15deg)!important;
-     line-height: 1px!important;
-     transition: all 0.3s!important;
+     line-height: 0px!important;
   }
   .second-line{
     transform: rotate(-90deg)!important;
-    line-height: 1px!important;
-    transition: all 0.3s!important;
+    line-height: 0px!important;
   }
   .slide-item{
     display: flex;
