@@ -2,6 +2,10 @@
 @import url(//db.onlinewebfonts.com/c/bc9fa02b4227255be2387a7e19a3e09b?family=Akkurat-Light);
 @font-face {font-family: "Akkurat-Light"!important; src: url("//db.onlinewebfonts.com/t/bc9fa02b4227255be2387a7e19a3e09b.eot"); src: url("//db.onlinewebfonts.com/t/bc9fa02b4227255be2387a7e19a3e09b.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/bc9fa02b4227255be2387a7e19a3e09b.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/bc9fa02b4227255be2387a7e19a3e09b.woff") format("woff"), url("//db.onlinewebfonts.com/t/bc9fa02b4227255be2387a7e19a3e09b.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/bc9fa02b4227255be2387a7e19a3e09b.svg#Akkurat-Light") format("svg"); }
 
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
 :root{
     --decoration-color: #ff9000;
 }
@@ -39,6 +43,10 @@ h1, h2, h3, h4, h5, h6{
     font-family: "Akkurat-Regular", "Akkurat-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 400;
 }
+a{
+    text-decoration: none;
+    color: var(--primary-color);
+}
 strong{
     font-family: "Akkurat-Regular", "Akkurat-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 600;
@@ -48,14 +56,25 @@ ul li{
     font-family: "Akkurat-Regular", "Akkurat-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 600;
 }
+li a{
+    font-family: "Akkurat-Regular", "Akkurat-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
 
 .container{
     padding: 0 8%;
 }
 
 .d-none{
-    display: none;
+    display: none!important;
 }
 .d-block{
     display: block;
+}
+.fixed-top{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    transition: all 1s;
 }

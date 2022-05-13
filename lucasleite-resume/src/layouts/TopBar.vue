@@ -3,7 +3,7 @@ import '../css/global.css'
 import 'animate.css'
 import {Swiper, SwiperSlide} from 'swiper/vue';
 import { Autoplay,FreeMode } from "swiper";
-// import {ref, reactive} from 'vue';
+import { ref } from 'vue';
 
 import 'swiper/css';
 
@@ -18,27 +18,46 @@ export default {
   },
   setup(){
     const modules = [Autoplay, FreeMode]
-    // const teste = ref(0);
-    // const data = reactive({
+    const showElement = ref(true);
 
-    // })
+    if(showElement.value == true){
+      window.addEventListener('scroll', function (){
+        let header = document.getElementById('header-container');
+  
+        let sticky = header.offsetTop;
+  
+        if(this.window.pageYOffset > (sticky)){
+          header.classList.add('fixed-top');
+        }
+        else if(this.window.pageYOffset == (sticky)){
+          header.classList.add('d-none');
+          header.classList.remove('fixed-top');
+        this.setTimeout(()=>{
+          header.classList.remove('d-none');
+        },10)
    
+        }
+      })
+
+    }
+
     //Menu mobile
-    const menuClick = () =>{
+    const menuClick = (params) =>{
       const slashone = document.getElementById('slashone');
       const slashtwo = document.getElementById('slashtwo');
-
+      
       const list = document.getElementById('list');
 
       const app = document.getElementById('application');
-
+      
       if(list.classList == 'list-style-none'){
-        list.classList.remove('list-style-none')
+        showElement.value = params != 'hideMenu' ? false : true
+        list.classList.remove('list-style-none');
         list.classList.add('list-style-flex');
           slashone.classList.add('first-line');
           slashtwo.classList.add('second-line');
         
-        if(app.classList == 'theme-dark'){
+        if(app.classList == 'theme-dark' && params != 'hideMenu'){
           app.classList.remove('theme-dark');
           app.classList.add('theme-light');
           
@@ -49,13 +68,14 @@ export default {
 
         }
       } else{
+        showElement.value = true
         slashone.classList.remove('first-line');
         slashtwo.classList.remove('second-line');
 
         list.classList.remove('list-style-flex')
         list.classList.add('list-style-none')
 
-        if(app.classList == 'theme-dark'){
+        if(app.classList == 'theme-dark' && params != 'hideMenu'){
           app.classList.remove('theme-dark');
           app.classList.add('theme-light');
         }
@@ -66,10 +86,14 @@ export default {
        
       }
     }
-
+    const hideMenu = () =>{
+      menuClick('hideMenu')
+    }
     return{
       menuClick,
       modules,
+      showElement,
+      hideMenu
       // teste,
       // data
     }
@@ -79,13 +103,17 @@ export default {
 
 <template>
   <header>
-    <div class="header-main container">
-      <div class="header-container ">
-        <div class=" logo">
-          <h1>LUCAS</h1><h1>LEITE</h1> 
+    <div class="header-main">
+      <div id="header-container" class="header-container container animate__animated animate__fadeInDown ">
+        <div class="logo">
+          <a href="#home">
+            <h1>LUCAS</h1><h1>LEITE</h1>
+          </a>
         </div>
-        <div class="logo-mobile">
-          <h1>LN</h1>
+        <div class="">
+          <a href="#home" class="logo-mobile">
+            <h1>LN</h1>
+          </a>
         </div>
         <nav>
           <div class="menu-toggle">
@@ -98,16 +126,16 @@ export default {
               
             </a>
           </div>
-          <ul class="list-style-none " id="list">
-            <li>Home</li>
-            <li>About</li>
-            <li>Skills</li>
-            <li>Projects</li>
-            <li>Contact</li>
+          <ul class="list-style-none" id="list">
+            <li><a href="#home" @click="hideMenu">Home</a></li>
+            <li><a href="#about" @click="hideMenu">About</a></li>
+            <li><a href="#skills" @click="hideMenu">Skills</a></li>
+            <li><a href="#projects" @click="hideMenu">Projects</a></li>
+            <li><a href="#contact" @click="hideMenu">Contact</a></li>
           </ul>
         </nav>
       </div>
-      <Swiper class="mySwiper "
+      <Swiper class="mySwiper"
         :modules="modules"
         :thumbs="{swiper: thumbsSwiper}"
         :pagination="pagination"
@@ -116,8 +144,9 @@ export default {
           delay:6000,
           disableOnInteraction:false
         }"
+        
       >
-        <SwiperSlide class="slide-item animate__animated animate__fadeInDown">
+        <SwiperSlide class="slide-item animate__animated animate__fadeInDown container" v-if="showElement">
           <div class="text-content" >
             <h1 style="font-size: 60px">Ola, me chamo <strong class="decoration-text">Lucas</strong></h1>
             <span>Desenvolvedor de Software e estudante do 3º Semetre de Analise e Desenvolvimento de Sistemas na Universidade Anhembi Morumbi.</span>
@@ -126,7 +155,7 @@ export default {
             <img :src="require('@/assets/Picture.jpeg')"  >
           </div>
         </SwiperSlide>
-        <SwiperSlide class="slide-item animate__animated animate__bounce" id="silde-0">
+        <SwiperSlide class="slide-item animate__animated animate__fadeInDown container" id="silde-0" v-if="showElement">
           <div class="text-content-order-0" >
             <h1>Soluções modernas para o seu <strong class="decoration-text">Produto </strong>ou <strong class="decoration-text"> Serviço</strong></h1>
             
@@ -167,16 +196,24 @@ export default {
 
 <style scoped>
 .animate__fadeInDown{
- animation-duration: 1.5s;
-  
+ animation-delay: 0.2s;
+  animation-duration: 0.8s;
 }
 .header-container{
-  padding-top: 95px;
+  animation-duration: 0.1s!important;
+  animation-delay: 0.1s!important;
+}
+.header-container{
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background: var(--bg-color);
+  z-index: 80;
+  
 }
 
-.logo{
+.logo a{
     font-size:10px;
     font-family: "Akkurat-Light"!;
     border: 1px solid var(--primary-color);
@@ -188,7 +225,7 @@ export default {
     color: var(--primary-color);
 }
 
-.logo:hover{
+.logo a:hover{
   border: 1px solid var(--primary-color-hover);
   color: var(--primary-color-hover);
   cursor: pointer;
@@ -214,7 +251,13 @@ nav ul li {
   text-transform: uppercase;
   transition: all 0.5s;
 }
-nav ul li:hover{
+
+li a{
+  text-decoration: none;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+nav ul li a:hover{
   color: var(--primary-color-hover);
   cursor: pointer;
 }
@@ -224,6 +267,7 @@ nav ul li:hover{
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  padding-top: 95px;
 
 }
 .slide-item{
@@ -311,7 +355,7 @@ h1 span, h1 strong, span{
 
 /* MEDIA */
 @media only screen and (max-width: 1020px){
-  .logo{
+  .logo a{
     display: flex;
     flex-direction: column;
     width: 100px;
@@ -387,7 +431,7 @@ h1 span, h1 strong, span{
 @media only screen and (max-width: 760px){
   .swiper{
     height: 100vh;
-    margin-top: 30%;
+  
   }
   .header-main{
   background: var(--bg-color);
@@ -421,15 +465,17 @@ h1 span, h1 strong, span{
     padding-top: 45px;
     z-index: 99;
     width: 100vw;
+    height: 100vh;
     position: absolute;
     left: 0; 
     height: 100vh;
     background: var(--bg-color);
     color: var(--primary-color);
   }
+
   .list-style-flex li{
     margin: 30px 0;
-    
+    position: relative;
   }
   .menu-toggle{
   width:100%; 

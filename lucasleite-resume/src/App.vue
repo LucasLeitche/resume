@@ -1,7 +1,17 @@
 <template>
   <div id="application" class="theme-dark">
-    <TopBar/>
-    <FooterBar/>
+    <div>
+      <TopBar id="home"/>
+    </div>
+    <div class="section">
+      <AboutVue id="about"/>
+      <SkillsVue id="skills"/>
+      <ProjectsVue id="projects" />
+      <ContactVue id="contact" />
+    </div>
+    <div>
+      <FooterBar/>
+    </div>
     <div>
 
     </div>
@@ -11,15 +21,46 @@
 <script>
 import TopBar from './layouts/TopBar'
 import FooterBar from './layouts/FooterBar'
+import AboutVue from './pages/AboutVue'
+import ProjectsVue from './pages/ProjectsVue'
+import ContactVue from './pages/ContactVue'
+import SkillsVue from './pages/SkilsVue'
 export default {
   name: 'App',
   components: {
     TopBar,
-    FooterBar
+    FooterBar,
+    AboutVue,
+    ProjectsVue,
+    ContactVue,
+    SkillsVue
   }
 }
+    
 </script>
 
 <style>
+.main-container{
+  background: var(--bg-color);
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80vh;
+  
 
+}
+.main-container p {
+  text-align: justify;
+}
+.section{
+  width: 100vw;
+  left: 0;
+}
+
+@media only screen and (max-width: 760px){
+  .main-container{
+    height: 80vh;
+  }
+}
 </style>
