@@ -45,6 +45,7 @@ export default {
     const menuClick = (params) =>{
       const slashone = document.getElementById('slashone');
       const slashtwo = document.getElementById('slashtwo');
+      const header = document.getElementById('header-container')
       
       const list = document.getElementById('list');
 
@@ -68,6 +69,7 @@ export default {
 
         }
       } else{
+        header.classList.remove('fixed-top')
         showElement.value = true
         slashone.classList.remove('first-line');
         slashtwo.classList.remove('second-line');
@@ -223,12 +225,15 @@ export default {
     align-items: center;
     justify-content: center;
     color: var(--primary-color);
+    transition: 0.3s;
 }
 
 .logo a:hover{
-  border: 1px solid var(--primary-color-hover);
-  color: var(--primary-color-hover);
+  border: 1px solid var(--decoration-color);
+  box-shadow: 0 0 5px 1px var(--decoration-color);
+  color: var(--decoration-color);
   cursor: pointer;
+   
 }
 
 .logo-mobile{
@@ -256,10 +261,13 @@ li a{
   text-decoration: none;
   color: var(--primary-color);
   cursor: pointer;
+  transition: 0.3s;
 }
 nav ul li a:hover{
-  color: var(--primary-color-hover);
+  color: var(--decoration-color);
+  text-shadow: 0.1px 0.1px 2px var(--decoration-color);
   cursor: pointer;
+  
 }
 
 .header-main{
@@ -454,6 +462,19 @@ h1 span, h1 strong, span{
     justify-content: center;
     margin-top: 0;
   }
+
+  .header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    position: relative;
+    width: 100vw;
+    background: var(--bg-color);
+    z-index: 80;
+    
+  }
+
   .list-style-none{
     display: none;
   }
@@ -468,7 +489,6 @@ h1 span, h1 strong, span{
     height: 100vh;
     position: absolute;
     left: 0; 
-    height: 100vh;
     background: var(--bg-color);
     color: var(--primary-color);
   }
