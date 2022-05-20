@@ -34,7 +34,7 @@ export default {
           header.classList.remove('fixed-top');
         this.setTimeout(()=>{
           header.classList.remove('d-none');
-        },10)
+        },500)
    
         }
       })
