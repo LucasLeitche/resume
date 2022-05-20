@@ -1,8 +1,8 @@
 <template>
-  <footer class="footer-bar container">
-      <i class="fab fa-linkedin-in"></i>
-      <i class="fab fa-github"></i>
-      <i class="fab fa-whatsapp"></i>
+  <footer class="footer-bar container" >
+      <a href=""><i class="fab fa-linkedin-in"></i></a>
+      <a href=""><i class="fab fa-github"></i></a>
+      <a href=""><i class="fab fa-whatsapp"></i></a>
   </footer>
 </template>
 
@@ -23,16 +23,20 @@ export default {
   color: var(--primary-color);
   display: flex;
   justify-content: start ;
-  font-size: 25px;
+  align-items: center;
+  font-size: 2rem;
   z-index: 99;
-}
-.footer-bar i:first-child {
-  margin-right: 30px;
-}
-.footer-bar i:nth-child(2), .footer-bar i:nth-child(3) {
-  margin: 0 30px;
+  gap: 30px;
 }
 
+.footer-bar a{
+  transform: scale(1);
+  transition: all 0.3s;
+}
+.footer-bar a:hover{
+  transform: scale(1.3);
+  cursor: pointer;
+}
 @media only screen and (max-width: 760px){
  .footer-bar{
    position:initial;

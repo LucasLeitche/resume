@@ -3,7 +3,7 @@
     <div>
       <TopBar id="home"/>
     </div>
-    <div class="section">
+    <div class="section-vue">
       <AboutVue id="about"/>
       <SkillsVue id="skills"/>
       <ProjectsVue id="projects" />

@@ -17,6 +17,8 @@ html{
 }
 .theme-light{
     --bg-color: #fff;
+    --bg-secondary: rgba(245, 245, 245, 0.589);
+
     --primary-color: #000;
     --primary-color-hover: rgba(26, 26, 26, 0.795);
     --secondary-color: #1c1c1c;
@@ -24,10 +26,15 @@ html{
 }
 .theme-dark{
     --bg-color: #000;
+    --bg-secondary: rgba(12, 12, 12, 0.589);
     --primary-color: #fff;
     --primary-color-hover: #c2c2c2;
     --secondary-color: WhiteSmoke;
     --secondary-color-hover: #F5F5DC;
+}
+
+.fixed-top{
+    position: fixed!important;
 }
 
 *{
@@ -37,10 +44,10 @@ html{
     font-family: 'Open Sans', sans-serif;
     font-family: 'PT Sans', sans-serif;
     font-family: 'PT Serif', serif;
+    font-family: "Akkurat-Regular", "Akkurat-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6{
-    font-family: "Akkurat-Regular", "Akkurat-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 400;
 }
 a{
@@ -48,21 +55,18 @@ a{
     color: var(--primary-color);
 }
 strong{
-    font-family: "Akkurat-Regular", "Akkurat-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 600;
 }
 ul li{
     list-style: none;
-    font-family: "Akkurat-Regular", "Akkurat-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 600;
 }
 li a{
-    font-family: "Akkurat-Regular", "Akkurat-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 600;
 }
 
 .container{
-    padding: 0 8%;
+    padding: 0 9%;
 }
 
 .d-none{
