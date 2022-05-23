@@ -5,7 +5,7 @@
         <h6 class="subtitle">/WHO WE ARE</h6>
         <div class="">
           <h1 class="title">Desenvolvedor de Software. </h1>
-          <p>Estudo e trabalho com desenvolvimento voltado a Web a mais de 2 anos. Aplicando soluções práticas e modernas focadas no melhor desempenho e experiência do usuário</p>
+          <p>Estudo e trabalho com desenvolvimento de software voltado a Web a mais de 2 anos. Aplicando soluções práticas e modernas, focando no melhor desempenho e experiência do usuário</p>
         </div>
         <div class="container-about">
         <div>
@@ -46,7 +46,7 @@ export default {
     window.addEventListener('scroll', function(){
       let element = document.getElementById('about-content');
       // let sticky = element.offsetTop;
-      console.log('work')
+
       if((this.window.pageYOffset) > 260){
         element.classList.remove('d-none')
       }
@@ -71,7 +71,7 @@ export default {
   gap:70px
 }
 .subtitle{
-  font-weight: 500;
+  font-weight: 900;
   font-size:1.4rem;
   letter-spacing: 1px;
   color: var(--decoration-color);

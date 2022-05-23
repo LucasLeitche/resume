@@ -30,11 +30,11 @@ export default {
 }
 
 .footer-bar a{
-  transform: scale(1);
   transition: all 0.3s;
 }
 .footer-bar a:hover{
-  transform: scale(1.3);
+   color: var(--decoration-color);
+  text-shadow: 0.1px 0.1px 2px var(--decoration-color);
   cursor: pointer;
 }
 @media only screen and (max-width: 760px){

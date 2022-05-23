@@ -43,15 +43,11 @@ export default {
 .main-container{
   background: var(--bg-color);
   color: var(--primary-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 80vh;
-  
-
+  height: 1000px;
 }
 .main-container p {
   text-align: justify;
+ 
 }
 .section{
   width: 100vw;
@@ -60,7 +56,9 @@ export default {
 
 @media only screen and (max-width: 760px){
   .main-container{
-    height: 80vh;
+    height: auto;
+    padding-top: 75px;
   }
+
 }
 </style>

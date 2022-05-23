@@ -26,7 +26,7 @@ html{
 }
 .theme-dark{
     --bg-color: #000;
-    --bg-secondary: rgba(12, 12, 12, 0.589);
+    --bg-secondary: rgba(29, 29, 29, 0.589);
     --primary-color: #fff;
     --primary-color-hover: #c2c2c2;
     --secondary-color: WhiteSmoke;
@@ -48,12 +48,13 @@ html{
 }
 
 h1, h2, h3, h4, h5, h6{
-    font-weight: 400;
+    
 }
 a{
     text-decoration: none;
     color: var(--primary-color);
 }
+
 strong{
     font-weight: 600;
 }
@@ -81,4 +82,10 @@ li a{
     left: 0;
     width: 100vw;
     transition: all 1s;
+}
+.text-center{
+    text-align: center;
+}
+.mt{
+    margin-top: 40px;
 }

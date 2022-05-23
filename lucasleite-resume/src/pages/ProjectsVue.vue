@@ -20,7 +20,7 @@ export default {
     window.addEventListener('scroll', function(){
       let element = document.getElementById('projects-content');
       // let sticky = element.offsetTop;
-      console.log('work')
+  
       if((this.window.pageYOffset) > 260){
         element.classList.remove('d-none')
       }
