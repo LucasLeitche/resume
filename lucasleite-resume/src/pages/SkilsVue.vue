@@ -33,8 +33,8 @@
           <span class="card-text"></span>
         </div>
         <div class="card-skill mt">
-         <i class="fab fa-react card-skill-icon"></i>
-          <h4 class="card-skill-title">CSS 3</h4>
+         <i class="fab fa-git-alt card-skill-icon"></i>
+          <h4 class="card-skill-title">Git</h4>
           <span class="card-text"></span>
         </div>
         <div class="card-skill mt">
