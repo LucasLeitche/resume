@@ -1,8 +1,8 @@
 <template>
   <footer class="footer-bar container" >
-      <a href=""><i class="fab fa-linkedin-in"></i></a>
-      <a href=""><i class="fab fa-github"></i></a>
-      <a href=""><i class="fab fa-whatsapp"></i></a>
+      <a href="http://www.linkedin.com/in/LucasLeitche" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/LucasLeitche" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://api.whatsapp.com/send?phone=5511948660920" target="_blank"><i class="fab fa-whatsapp"></i></a>
   </footer>
 </template>
 
