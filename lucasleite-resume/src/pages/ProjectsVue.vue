@@ -1,43 +1,119 @@
 <template>
   <div class="container main-container">
-    <div id="projects-content" class="animate__animated animate__fadeInUp d-none">
-      <div>
-        <h1>Projects</h1>
+    <div id="project-content" class="animate__animated animate__fadeInUp ">
+      <div class="section-project text-center">
+        <h6 class="subtitle">/NO QUE TENHO TRABALHADO</h6>
+        <div class="project-padding">
+          <h1 class="title">
+            Meus Projetos Recentes
+          </h1>
+          <p>Aqui guardei alguns projetos no qual tenho trabalhado, que desenvolvi para aplicar e aprimorar os conhecimentos que tenho em relação as boas práticas de desenvolvimento e as tecnologias que domíno e pretendo aperfeiçoar. </p>
+        </div>
       </div>
-      <p>
-        Comecei minha jornada no desenvolvimento aos 16 anos iniciando meu ensino tecnico em Informatica. Desde muito jovem já tinha muita curiosidade em saber como se formavam as softwares e tecnologias e conforme fui descobrindo me veio o desejo de criar minhas proprias soluções e softwares.
-          Após finalizar o ensino médio sempre trabalhei para conhecer e ingressar no mercado de trabalho. Com 19 anos iniciei no meu primeiro emprego na área da tecnologia na empresa Stout Software, onde era responsavel por auxiliar nas implantações do produto ERP e responsavel pelo suporte de todos os nossos clientes. Com 20 anos me foi oferecido uma oportunidade para entrar no time de desenvolvimento o qual estou até o momento.
-          "Prezo pelo trabalho honesto, correto e manter um bom ambiente de trabalho, mesmo que a distância. Todos precisamos ter prazer no que fazemos para exercer um bom trabalho"
-      </p>
+      <div class="card-container">
+        <div v-for="project in projectItems" :key="project.id" class="card-project" >
+          <div class="card-project-img">
+            <img :src="project.url"  alt="">
+          </div>
+          <h6 class="subtitle-sm">/{{project.tool}}</h6>
+          <h4 class="title-sm">{{project.title}}</h4>
+          <span>{{project.text}}</span>
+        </div>
+      </div>
+      
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
-  setup(){
-    window.addEventListener('scroll', function(){
-      let element = document.getElementById('projects-content');
-      // let sticky = element.offsetTop;
-  
-      if((this.window.pageYOffset) > 260){
-        element.classList.remove('d-none')
-      }
-    })
+computed:{
+  projectItems: function (){
+    return [
+      {id: 1, tool: 'Tool', url: 'http://alearslan.com/this-one-one-page-responsive-website-template/01-This-One/assets/imgs/blog/1.jpg', title:'Not Found', text:'Not found...'},
+      {id: 1, tool: 'Tool', url: 'http://alearslan.com/this-one-one-page-responsive-website-template/01-This-One/assets/imgs/blog/2.jpg', title:'Not Found', text:'Not found...'},
+      {id: 1, tool: 'Tool', url: 'http://alearslan.com/this-one-one-page-responsive-website-template/01-This-One/assets/imgs/blog/3.jpg', title:'Not Found', text:'Not found...'}
+    ]
   }
+}
 }
 </script>
 
 <style scoped>
-#projects-content{
-  left:0;
-  width: 50%!important;
+#project-content{
+
 }
-@media only screen and (max-width:768px){
-  #projects-content{
-  left:0;
-  width: 100%!important;
+.section-project p{
+  font-size:20px;
+  margin-top:20px;
+ 
+}
+
+.subtitle{
+  font-weight: 900;
+  font-size:1.4rem;
+  letter-spacing: 1px;
+  color: var(--decoration-color);
+}
+.subtitle-sm{
+  font-weight: 900;
+  font-size:1.0rem;
+  letter-spacing: 1px;
+  color: var(--decoration-color);
+  text-transform: uppercase;
+}
+.title{
+  font-weight: 600;
+  font-size: 2.2rem
+}
+.title-sm{
+  font-weight: 600;
+  font-size: 1.7rem
+}
+.project-padding{
+  padding: 0 60px;
+}
+.card-container{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.card-project{
+  height: 300px;
+  width: 340px;
+  padding: 50px;
+  background-color: transparent;
+  transition: all 0.3s;
+}
+.card-project-img{
+  width: 300px;
+  height: auto;
+  border: 5px solid transparent;
+  overflow: hidden;
+}
+.card-project-img img{
+  transform: scale(1.0);
+  width: 100%;
+  transition: 0.3s;
+}
+.card-project-img img:hover{
+  filter: blur(0.7px);
+  transform: scale(1.1);
+  position:relative
+}
+.card-project-title{
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 1020px){
+  #about-content{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
   }
+
+  .project-padding{
+  padding: 0 0px;
+}
 }
 </style>

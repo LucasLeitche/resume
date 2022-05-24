@@ -2,10 +2,10 @@
   <div class="container main-container">
     <div id="about-content" class="animate__animated animate__fadeInUp d-none">
       <div class="section-about">
-        <h6 class="subtitle">/WHO WE ARE</h6>
+        <h6 class="subtitle">/QUEM SOU EU</h6>
         <div class="">
           <h1 class="title">Desenvolvedor de Software. </h1>
-          <p>Estudo e trabalho com desenvolvimento de software voltado a Web a mais de 2 anos. Aplicando soluções práticas e modernas, focando no melhor desempenho e experiência do usuário</p>
+          <p>Estudo e trabalho com desenvolvimento de software voltado a Web a mais de 2 anos. Aplicando soluções práticas e modernas, focando no melhor desempenho e experiência do usuário.</p>
         </div>
         <div class="container-about">
         <div>

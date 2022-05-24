@@ -19,7 +19,7 @@ export default {
   position: fixed;
   bottom: 0;
   left:0;
-  background: black!important;
+  background: var(--bg-color);
   color: var(--primary-color);
   display: flex;
   justify-content: start ;

@@ -2,34 +2,33 @@
   <div class="container main-container">
     <div id="skill-content" class="animate__animated animate__fadeInUp ">
       <div class="section-skill text-center">
-        <h6 class="subtitle">/WHAT WE DO</h6>
+        <h6 class="subtitle">/O QUE DOMÍNO</h6>
         <div class="skill-padding">
           <h1 class="title">
-            We are a creative studio that combines
-            creativity, technology & design 
+            Meus projetos e serviços são desenvovidos ao redor dessas ferramentas.
           </h1>
-          <p>Estudo e trabalho com desenvolvimento de software voltado a Web a mais de 2 anos. Aplicando soluções práticas e modernas, focando no melhor desempenho e experiência do usuário</p>
+          <p></p>
         </div>
       </div>
       <div class="card-container">
-        <div class="card-skill">
+        <div class="card-skill mt">
          <i class="fab fa-js card-skill-icon"></i>
           <h4 class="card-skill-title">JavaScript</h4>
           <span class="card-text"></span>
         </div>
-        <div class="card-skill">
+        <div class="card-skill mt">
          <i class="fab fa-html5 card-skill-icon"></i>
           <h4 class="card-skill-title">HTML 5</h4>
           <span class="card-text"></span>
         </div>
-        <div class="card-skill">
+        <div class="card-skill mt">
          <i class="fab fa-css3-alt card-skill-icon"></i>
           <h4 class="card-skill-title">CSS 3</h4>
           <span class="card-text"></span>
         </div>
         <div class="card-skill mt">
          <i class="fab fa-vuejs card-skill-icon"></i>
-          <h4 class="card-skill-title">CSS 3</h4>
+          <h4 class="card-skill-title">Vue.js</h4>
           <span class="card-text"></span>
         </div>
         <div class="card-skill mt">
@@ -78,9 +77,8 @@ export default {
 }
 .card-container{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  margin-top: 80px;
 }
 .card-skill{
   height: 300px;
@@ -115,6 +113,6 @@ export default {
 
   .skill-padding{
   padding: 0 0px;
-}
+  }
 }
 </style>
