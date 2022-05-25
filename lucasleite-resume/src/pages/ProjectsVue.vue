@@ -86,7 +86,8 @@ computed:{
   transition: all 0.3s;
 }
 .card-project-img{
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
   height: auto;
   border: 5px solid transparent;
   overflow: hidden;

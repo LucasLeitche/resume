@@ -3,7 +3,7 @@
     <div id="contact-content" class="animate__animated animate__fadeInUp ">
       <div>
         <h6 class="subtitle">ENTRAR EM CONTATO</h6>
-        <h1 class="title" style="word-break:break-all">Fale ou me encontre em alguma rede.</h1>
+        <h1 class="title" style="word-break:break-all">Ligue ou me mande um email.</h1>
         <div class="content-container">
           <div>
             <i class="fas fa-phone-alt"></i>
@@ -26,10 +26,11 @@
       <div class="container-mail">
         <h6 class="subtitle">ME CONTE SUA NECESSIDADE</h6>
         <h1 class="title">Contate-me por aqui.</h1>
-        <form action="">
-          <input type="text" name="" id="">
-          <input type="mail" name="" id="">
-          <input type="text" placeholder="assunto" name="" id="">
+        <form action="" class="contact-form">
+          <input type="text" placeholder="Entre com seu nome *" name="name" id="">
+          <input type="mail" placeholder="Entre com seu email *" name="" id="">
+          <input type="text" placeholder="Entre com o assunto *" name="" id="">
+          <textarea name="" placeholder="Entre com sua mensagem *" id="" cols="30" rows="10"></textarea>
         </form>
       </div>
     </div>
@@ -46,7 +47,7 @@ export default {
 <style scoped>
 .main-container{
   background: var(--bg-secondary);
-  height: 100vh;
+  height: 250vh;
 }
 #contact-content{
   display: flex;
@@ -142,16 +143,50 @@ export default {
 .card-contact-title{
   font-size: 2rem;
 }
+.container-mail{
+  width: 700px;
+}
+
+.contact-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input{
+  max-width: 500px;
+  width: 100%;
+  font-size: 20px;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.contact-form textarea{
+  max-width: 500px;
+  width: 100%;
+  font-size: 20px;
+  height: 250px;
+  margin-top:30px;
+  padding: 10px;
+}
+.contact-form [name="name"]{
+  margin-top: 50px!important;
+}
 
 @media only screen and (max-width: 1020px){
-  #about-content{
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
+  #contact-content{
+  display: flex;
+  flex-direction: column;
+  }
+  .contact-padding{
+    padding: 0 0px;
+  }
+  .container-mail{
+  width: auto;
   }
 
-  .contact-padding{
-  padding: 0 0px;
-}
+
+
+
+
 }
 </style>
