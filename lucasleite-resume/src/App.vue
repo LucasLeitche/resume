@@ -54,6 +54,15 @@ export default {
   left: 0;
 }
 
+@media only screen and (max-width: 1020px){
+  .main-container{
+    height: auto;
+    padding-top: 0;
+  }
+  .section-vue{
+    margin-top:-50px;
+  }
+}
 @media only screen and (max-width: 760px){
   .main-container{
     height: auto;

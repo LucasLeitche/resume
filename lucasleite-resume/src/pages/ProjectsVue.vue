@@ -5,7 +5,7 @@
         <h6 class="subtitle">/NO QUE TENHO TRABALHADO</h6>
         <div class="project-padding">
           <h1 class="title">
-            Meus Projetos Recentes
+            Meus Projetos Recentes.
           </h1>
           <p>Aqui guardei alguns projetos no qual tenho trabalhado, que desenvolvi para aplicar e aprimorar os conhecimentos que tenho em relação as boas práticas de desenvolvimento e as tecnologias que domíno e pretendo aperfeiçoar. </p>
         </div>
@@ -96,10 +96,13 @@ computed:{
   width: 100%;
   transition: 0.3s;
 }
+.card-container:hover{
+  cursor: pointer;
+}
 .card-project-img img:hover{
   filter: blur(0.7px);
   transform: scale(1.1);
-  position:relative
+  position:relative;
 }
 .card-project-title{
   font-size: 2rem;

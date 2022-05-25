@@ -26,7 +26,7 @@ html{
 }
 .theme-dark{
     --bg-color: #000;
-    --bg-secondary: rgba(29, 29, 29, 0.589);
+    --bg-secondary: rgb(29, 29, 29);
     --primary-color: #fff;
     --primary-color-hover: #c2c2c2;
     --secondary-color: WhiteSmoke;

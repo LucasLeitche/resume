@@ -16,7 +16,7 @@ export default {
 .footer-bar{
   width: 100vw;
   height: 2.0em;
-  position: fixed;
+  position: relative;
   bottom: 0;
   left:0;
   background: var(--bg-color);
