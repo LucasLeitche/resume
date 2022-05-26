@@ -23,18 +23,24 @@ export default {
     if(showElement.value == true){
       window.addEventListener('scroll', function (){
         let header = document.getElementById('header-container');
+        let buttonTop = document.getElementById('button-top')
   
         let sticky = header.offsetTop;
-  
+
         if(this.window.pageYOffset > (sticky)){
           header.classList.add('fixed-top');
+          buttonTop.classList.remove('d-none');
+
         }
         else if(this.window.pageYOffset == (sticky)){
           header.classList.add('d-none');
           header.classList.remove('fixed-top');
+          buttonTop.classList.remove('fadeIn')
+          buttonTop.classList.add('fadeOut')
         this.setTimeout(()=>{
           header.classList.remove('d-none');
-        },500)
+          buttonTop.classList.add('d-none');
+        },100)
    
         }
       })
@@ -106,7 +112,7 @@ export default {
 <template>
   <header>
     <div class="header-main">
-      <div id="header-container" class="header-container container animate__animated animate__fadeInDown ">
+      <div id="header-container" class="header-container container">
         <div class="logo">
           <a href="#home">
             <h1>LUCAS</h1><h1>LEITE</h1>
@@ -114,12 +120,12 @@ export default {
         </div>
         <div class="">
           <a href="#home" class="logo-mobile">
-            <h1>LN</h1>
+            <h1>LL</h1>
           </a>
         </div>
         <nav>
           <div class="menu-toggle">
-            <a href="#" @click="menuClick" >
+            <a href="#/?" @click="menuClick" >
              
               <!-- <span class="vertical-line"></span>
               <span class="vertical-line" style="margin-top:10px"></span> -->
@@ -281,6 +287,8 @@ nav ul li a:hover{
 .slide-item{
   display: flex;
   transition: all 5s;
+  display: flex;
+  justify-content: center;
 }
 
 .slide-item .text-content{
@@ -297,6 +305,7 @@ nav ul li a:hover{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-right:  10px;
   font-size:20px;
   order:1;
@@ -304,13 +313,14 @@ nav ul li a:hover{
 }
 
 .container-item-img-order-1{
-  height:350px; width: 750px; 
+  height:350px; width: 750px;
   font-size: 20px;
   padding-top: 0;
   order: 0;
 }
  .swiper{
     margin-top: 5%;
+    width: 100%;
   }
 .row{
   display: flex;

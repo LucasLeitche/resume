@@ -1,6 +1,6 @@
 <template>
   <div class="container main-container">
-    <div id="project-content" class="animate__animated animate__fadeInUp ">
+    <div id="project-content" class="" data-anime>
       <div class="section-project text-center">
         <h6 class="subtitle">/NO QUE TENHO TRABALHADO</h6>
         <div class="project-padding">
@@ -89,7 +89,7 @@ computed:{
   max-width: 300px;
   width: 100%;
   height: auto;
-  border: 5px solid transparent;
+  border: 1px solid transparent;
   overflow: hidden;
 }
 .card-project-img img{
@@ -110,14 +110,36 @@ computed:{
 }
 
 @media only screen and (max-width: 1020px){
-  #about-content{
+  #project-content{
     display: flex;
     flex-direction: column;
     margin-top: 50px;
   }
-
   .project-padding{
   padding: 0 0px;
-}
+  }
+  .card-project{
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  background-color: transparent;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 30px 0;
+  
+  }
+  .card-container{
+    text-align: center;
+  }
+  .card-project-img{
+    width: 100%;
+    text-align: center;
+    align-self: center;
+    margin: 0;
+    padding: 0;
+  }
+
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="container main-container">
-    <div id="skill-content" class="animate__animated animate__fadeInUp ">
+    <div id="skill-content" class="" data-anime>
       <div class="section-skill text-center">
         <h6 class="subtitle">/O QUE DOMÍNO</h6>
         <div class="skill-padding">
@@ -54,6 +54,7 @@ export default {
 </script>
 
 <style scoped>
+
 #skill-content{
 }
 .section-skill p{
@@ -79,6 +80,7 @@ export default {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  gap: 30px;
 }
 .card-skill{
   height: 300px;
@@ -105,14 +107,14 @@ export default {
 }
 
 @media only screen and (max-width: 1020px){
-  #about-content{
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-  }
-
   .skill-padding{
-  padding: 0 0px;
+    padding: 0 0px;
+  }
+}
+
+@media only screen and (max-width: 760px){
+   .main-container{
+    padding-top:120px!important;
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="container main-container">
-    <div id="about-content" class="animate__animated animate__fadeInUp d-none">
+    <div id="about-content" class="" data-anime>
       <div class="section-about">
         <h6 class="subtitle">/QUEM SOU EU</h6>
         <div class="">
@@ -42,16 +42,7 @@
 <script>
 
 export default {
-  setup(){
-    window.addEventListener('scroll', function(){
-      let element = document.getElementById('about-content');
-      // let sticky = element.offsetTop;
-
-      if((this.window.pageYOffset) > 260){
-        element.classList.remove('d-none')
-      }
-    })
-  }
+  
 }
 </script>
 

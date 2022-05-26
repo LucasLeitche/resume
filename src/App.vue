@@ -8,6 +8,7 @@
       <SkillsVue id="skills"/>
       <ProjectsVue id="projects" />
       <ContactVue id="contact" />
+      <button-scroll-top />
     </div>
     <div>
       <FooterBar/>
@@ -25,6 +26,8 @@ import AboutVue from './pages/AboutVue'
 import ProjectsVue from './pages/ProjectsVue'
 import ContactVue from './pages/ContactVue'
 import SkillsVue from './pages/SkilsVue'
+import ButtonScrollTop from './components/ButtonScrollTop';
+
 export default {
   name: 'App',
   components: {
@@ -33,7 +36,26 @@ export default {
     AboutVue,
     ProjectsVue,
     ContactVue,
-    SkillsVue
+    SkillsVue,
+    ButtonScrollTop
+  },
+  setup(){
+    function animeScroll(){
+      const target = document.querySelectorAll('[data-anime]');
+      let windowTop = window.pageYOffset;
+      // console.log(windowTop)
+      // console.log(target)
+
+      target.forEach( function (element){
+        if((windowTop) >= element.offsetTop - 300){
+          element.classList.add('animate')
+          console.log('work', element)
+        }
+      })
+    }
+    window.addEventListener('scroll', function(){
+      animeScroll();
+    })
   }
 }
     
@@ -44,6 +66,11 @@ export default {
   background: var(--bg-color);
   color: var(--primary-color);
   height: 1000px;
+  padding-top: 60px;
+  transition: all 1s;
+}
+.main-container .animate__fadeInUp{
+  animation-delay: 0.5s;
 }
 .main-container p {
   text-align: justify;
@@ -52,12 +79,12 @@ export default {
 .section{
   width: 100vw;
   left: 0;
+
 }
 
 @media only screen and (max-width: 1020px){
   .main-container{
     height: auto;
-    padding-top: 0;
   }
   .section-vue{
     margin-top:-50px;

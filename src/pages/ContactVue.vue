@@ -1,6 +1,6 @@
 <template>
   <div class="container main-container">
-    <div id="contact-content" class="animate__animated animate__fadeInUp ">
+    <div id="contact-content" class="" data-anime>
       <div>
         <h6 class="subtitle">ENTRAR EM CONTATO</h6>
         <h1 class="title" style="word-break:break-all">Ligue ou me mande um email.</h1>
@@ -26,11 +26,13 @@
       <div class="container-mail">
         <h6 class="subtitle">ME CONTE SUA NECESSIDADE</h6>
         <h1 class="title">Contate-me por aqui.</h1>
-        <form action="" class="contact-form">
+        <form action="https://api.staticforms.xyz/submit" method="POST" class="contact-form">
+          <input type="hidden" name="accessKey" value="abc6dd19-c6a6-4dd0-9be3-c1f28526381f">
           <input type="text" placeholder="Entre com seu nome *" name="name" id="">
-          <input type="mail" placeholder="Entre com seu email *" name="" id="">
-          <input type="text" placeholder="Entre com o assunto *" name="" id="">
-          <textarea name="" placeholder="Entre com sua mensagem *" id="" cols="30" rows="10"></textarea>
+          <input type="mail" placeholder="Entre com seu email *" name="email" id="">
+          <textarea  placeholder="Entre com sua mensagem *" name="message" id="" cols="30" rows="10"></textarea>
+          <input type="submit" value="Submit" class="submit">
+          <input type="hidden" name="redirectTo" value="http://192.168.15.51:8080/#contact">
         </form>
       </div>
     </div>
@@ -45,9 +47,17 @@ export default {
 </script>
 
 <style scoped>
+.submit{
+  background-color: var(--decoration-color) ;
+  border: transparent;
+  color: white;
+  font-weight: 600;
+}
 .main-container{
   background: var(--bg-secondary);
-  height: 250vh;
+  height: 800px;
+  padding-bottom: 90px;
+  padding-top: 130px;
 }
 #contact-content{
   display: flex;
@@ -158,6 +168,7 @@ export default {
   font-size: 20px;
   padding: 10px;
   margin-top: 30px;
+  border-radius: 5px
 }
 
 .contact-form textarea{
@@ -167,12 +178,17 @@ export default {
   height: 250px;
   margin-top:30px;
   padding: 10px;
+  border-radius: 5px
 }
 .contact-form [name="name"]{
   margin-top: 50px!important;
 }
 
 @media only screen and (max-width: 1020px){
+  .main-container{
+    background: var(--bg-secondary);
+    height: auto
+  }
   #contact-content{
   display: flex;
   flex-direction: column;
@@ -183,7 +199,6 @@ export default {
   .container-mail{
   width: auto;
   }
-
 
 
 
