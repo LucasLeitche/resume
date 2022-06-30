@@ -2,9 +2,9 @@
 @import url("https://db.onlinewebfonts.com/c/bc9fa02b4227255be2387a7e19a3e09b?family=Akkurat-Light");
 @font-face {font-family: "Akkurat-Light"!important; src: url("https://db.onlinewebfonts.com/t/bc9fa02b4227255be2387a7e19a3e09b.eot"); 
     src: url("https://db.onlinewebfonts.com/t/bc9fa02b4227255be2387a7e19a3e09b.eot?#iefix") format("embedded-opentype"), 
-    url("https://db.onlinewebfonts.com/t/bc9fa02b4227255be2387a7e19a3e09b.woff2") format("woff2"), 
-    url("https://db.onlinewebfonts.com/t/bc9fa02b4227255be2387a7e19a3e09b.woff") format("woff"), 
-    url("https://db.onlinewebfonts.com/t/bc9fa02b4227255be2387a7e19a3e09b.ttf") format("truetype"), 
+    url("../assets/fonts/bc9fa02b4227255be2387a7e19a3e09b.woff2") format("woff2"), 
+    url("../assets/fonts/bc9fa02b4227255be2387a7e19a3e09b.woff") format("woff"), 
+    url("../assets/fonts/bc9fa02b4227255be2387a7e19a3e09b.ttf") format("truetype"), 
     url("https://db.onlinewebfonts.com/t/bc9fa02b4227255be2387a7e19a3e09b.svg#Akkurat-Light") format("svg"); }
 
 html{
