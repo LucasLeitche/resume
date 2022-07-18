@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=PT+Sans:wght@400;700&family=PT+Serif&display=swap');
 @import url("https://db.onlinewebfonts.com/c/bc9fa02b4227255be2387a7e19a3e09b?family=Akkurat-Light");
-@font-face {font-family: "Akkurat-Light"!important; src: url("https://db.onlinewebfonts.com/t/bc9fa02b4227255be2387a7e19a3e09b.eot"); 
-    src: url("https://db.onlinewebfonts.com/t/bc9fa02b4227255be2387a7e19a3e09b.eot?#iefix") format("embedded-opentype"), 
+@font-face {font-family: "Akkurat-Light"!important; src: 
     url("../assets/fonts/bc9fa02b4227255be2387a7e19a3e09b.woff2") format("woff2"), 
     url("../assets/fonts/bc9fa02b4227255be2387a7e19a3e09b.woff") format("woff"), 
     url("../assets/fonts/bc9fa02b4227255be2387a7e19a3e09b.ttf") format("truetype"), 

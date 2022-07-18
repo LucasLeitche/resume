@@ -278,15 +278,15 @@ nav ul li a:hover{
 
 .header-main{
   background: var(--bg-color);
-  height: 100vh;
-  width: 100vw;
+  /* height: 100vh; */
+  /* width: 100%; */
   overflow: hidden;
   padding-top: 95px;
 
 }
 .slide-item{
   display: flex;
-  transition: all 5s;
+  /* transition: all 5s; */
   display: flex;
   justify-content: center;
 }
